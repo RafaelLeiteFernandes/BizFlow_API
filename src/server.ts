@@ -4,6 +4,7 @@ import authRoutes from './routes/auth';
 import protectedRoutes from './routes/protectedRoute';
 import path from 'path';
 import dotenv from 'dotenv';
+import cors from 'cors';  // Importar o middleware CORS
 
 dotenv.config();
 
@@ -27,6 +28,12 @@ try {
   console.error('Error initializing Firebase Admin SDK:', error);
   process.exit(1);
 }
+
+app.use(cors({
+  origin: 'http://localhost:3001',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 
 app.use(express.json());
 app.use('/auth', authRoutes);
