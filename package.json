@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
+    "start":"ts-node src/server.ts",
+    "build":"tsc",
+    "serve":"node dist/server.js"
+
   },
   "keywords": [],
   "author": "",
@@ -25,7 +29,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/firebase": "^3.2.1",
-    "@types/node": "^20.14.12",
+    "@types/node": "^20.14.14",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
